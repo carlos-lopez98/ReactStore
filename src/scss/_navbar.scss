@@ -1,0 +1,57 @@
+/* This nav is referring to the entier nav element, not a className */
+nav {
+    background-color: var(--blue-background);
+    transition: var(--transition);
+    .py-3{
+        padding: 2rem 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .brand{
+            display: flex;
+            gap: 0.3rem;
+
+            span{
+                color: var(--dark-blue);
+                font-size: 2rem;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: bolder;
+            }
+    
+            .dot{
+                color: var(--ocean-blue);
+            }
+        }
+        
+        .links-container{
+            .toggle{
+                display: flex;
+                gap: 1rem;
+                flex-direction: row-reverse;
+                position: relative;
+                z-index: 1;
+
+                /* SVG images are images that don't lose quality when scaling, they're images made with code (XML) */
+                svg{
+                    color: var(--dark-blue);
+                }
+            }
+
+            .links{
+                /* This is effectively hiding our links */
+                width: 0vw;
+                position: fixed;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+
+
+
