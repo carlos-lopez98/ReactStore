@@ -50,9 +50,25 @@ nav {
                 height: 100vh;
                 visibility: hidden;
                 transition: var(--transition);
+                background-color: var(--background);
                 opacity: 0;
                 ul{
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 4rem;
+                    align-items: center;
+                    li{
+                        a{
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            color: var(--light-blue);
+                            font-weight: bold;
+                        }
+                    }
 
+                    
                 }
             }
 
@@ -61,7 +77,7 @@ nav {
                 width: 60vw;
                 visibility: visible;
                 opacity: 1;
-                background-color: red;
+                
             }
         }
     }

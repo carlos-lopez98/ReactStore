@@ -7,6 +7,8 @@ import {BsFillMoonFill} from 'react-icons/bs'
 export default function Navbar() {
  /* This is setting a variable *navState*, giving it a setter method *setNavState*, then setting a default value *false* */
   const [navState, setNavState] = useState(false);
+  const html = document.querySelector("html");
+  html.addEventListener("click", () => setNavState(false));
 
   return (
     <nav>
@@ -16,11 +18,16 @@ export default function Navbar() {
             <div className='dot'>.</div>
           </div>
 
-          <div className='links-container'>
+          <div className='links-container' onClick={(e) => e.stopPropagation()}>
               <div className='toggle'>
                   {/* If True show mdClose -- if False show GIHamburger -- default is false so GiHamburger */}
-                {navState ? <MdClose onClick={()=> setNavState(false)}/> : 
-                    <GiHamburgerMenu onClick={()=> setNavState(true)}/>}
+                {navState ? <MdClose onClick={() => {
+                  setNavState(false)}
+                }/> : 
+                    <GiHamburgerMenu onClick={(e)=> {
+                      e.stopPropagation();
+                      setNavState(true)
+                    } }/>}
               </div>
 
               <div className={`links ${navState? "responsive-toggle" : ""}`}>
